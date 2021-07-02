@@ -25,6 +25,7 @@ async function main() {
 		repository: context.payload.repository.full_name,
 		prefix: `${process.env.GITHUB_WORKSPACE}/`,
 	}
+	console.log(context.payload);
 
 	if (context.eventName === "pull_request") {
 		options.commit = context.payload.pull_request.head.sha
